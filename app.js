@@ -8,7 +8,6 @@ const FillInc = (n,a) => {
         arrow.push(i);
     }
     arrow.shift();
-    console.log(arrow);
 } 
 
 
@@ -18,14 +17,12 @@ const FillDec = (n,a) => {
         arrow.push(i);
     }
     arrow.pop();
-    console.log(arrow);
 } 
 
 const FillRand = (n,a) => {
     for (let i = 0; i < n; i++) {
         arrow.push(Math.round((Math.random() * a)));
     }
-    console.log(arrow);
 } 
 
 const CheckSum = (array) => {
@@ -34,16 +31,17 @@ const CheckSum = (array) => {
 
 const RunNumber = (array) => {
     let counter = 0;
-    let status = true;
-    for (let i = 0; i < array.length-1; i++) {
-        const currentStatus = status;
-        (array[i] > array[i+1]) && counter++
-
-        // (array[i] > array[i+1]) ? status = false : status = true;
-        // (status !== currentStatus) && counter++
+    arrow.push(-1);
+    for (let i = 0; i < array.length; i++) {
+        if(array[i] > array[i+1]) counter++;       
     }
-    array[array.length - 2] > array[array.length - 1] && counter++;
-    console.log(counter);
+    arrow.pop()
+    console.log(counter)
+    
+}
+
+const PrintMas = () => {
+    console.log(arrow);
 }
 
 
@@ -51,3 +49,4 @@ const RunNumber = (array) => {
 
 FillRand(4,10)
 RunNumber(arrow);
+PrintMas();
