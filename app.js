@@ -2,26 +2,26 @@
 let arrow = [];
 
 
-const FillInc = (n,a) => {
+const FillInc = (array,n,a) => {
     const step = a/n;
     for (let i = 0; i <= a; i+=step) {
-        arrow.push(i);
+        array.push(i);
     }
-    arrow.shift();
+    array.shift();
 } 
 
 
-const FillDec = (n,a) => {
+const FillDec = (array,n,a) => {
     const step = a/n;
     for (let i = a; i >= 0; i-=step) {
-        arrow.push(i);
+        array.push(i);
     }
-    arrow.pop();
+    array.pop();
 } 
 
-const FillRand = (n,a) => {
+const FillRand = (array,n,a) => {
     for (let i = 0; i < n; i++) {
-        arrow.push(Math.round((Math.random() * a)));
+        array.push(Math.round((Math.random() * a)));
     }
 } 
 
@@ -40,13 +40,13 @@ const RunNumber = (array) => {
     
 }
 
-const PrintMas = () => {
-    console.log(arrow);
+const PrintMas = (array) => {
+    console.log(array);
 }
 
 
 
 
-FillRand(4,10)
+FillRand(arrow,4,10)
 RunNumber(arrow);
-PrintMas();
+PrintMas(arrow);
